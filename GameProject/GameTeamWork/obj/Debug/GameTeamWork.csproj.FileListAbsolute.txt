@@ -1,0 +1,6 @@
+D:\Programing\Teamwork-Sep-2015\GameProject\GameTeamWork\bin\Debug\GameTeamWork.exe.config
+D:\Programing\Teamwork-Sep-2015\GameProject\GameTeamWork\bin\Debug\GameTeamWork.exe
+D:\Programing\Teamwork-Sep-2015\GameProject\GameTeamWork\bin\Debug\GameTeamWork.pdb
+D:\Programing\Teamwork-Sep-2015\GameProject\GameTeamWork\obj\Debug\GameTeamWork.csprojResolveAssemblyReference.cache
+D:\Programing\Teamwork-Sep-2015\GameProject\GameTeamWork\obj\Debug\GameTeamWork.exe
+D:\Programing\Teamwork-Sep-2015\GameProject\GameTeamWork\obj\Debug\GameTeamWork.pdb

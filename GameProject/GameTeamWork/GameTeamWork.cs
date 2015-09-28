@@ -7,8 +7,8 @@ public class GameTeamWork
     //1.Structure "Object" contains four variables - coordinates, color, and its symbols.
     struct Object
     {
-        public int x;
-        public int y;
+        public string x;
+        public string y;
         public ConsoleColor color;
         public char symbol;
     }
@@ -25,7 +25,7 @@ public class GameTeamWork
             //7.Draw playfield
             Console.BufferHeight = Console.WindowHeight = 30;//This is the size of the console window height.
             Console.BufferWidth = Console.WindowWidth = 40;//size of window width.
-            Console.BackgroundColor = ConsoleColor.DarkRed;//color of playfield
+            Console.BackgroundColor = ConsoleColor.Blue;//color of playfield
             //8.Draw info
             //9.Slow down program
             Thread.Sleep(500);
