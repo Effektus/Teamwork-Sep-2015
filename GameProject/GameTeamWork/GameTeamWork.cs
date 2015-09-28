@@ -22,6 +22,9 @@ public class GameTeamWork
             //5.Check for other object are hitting
             //6.Clear the console with (Console.Clear)
             //7.Draw playfield
+            Console.BufferHeight = Console.WindowHeight = 30;//This is the size of the console window height.
+            Console.BufferWidth = Console.WindowWidth = 40;//size of window width.
+            Console.BackgroundColor = ConsoleColor.DarkRed;//color of playfield
             //8.Draw info
             //9.Swol down program
 
