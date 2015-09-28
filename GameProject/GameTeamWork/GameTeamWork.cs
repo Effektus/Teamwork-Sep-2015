@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Security.Cryptography.X509Certificates;
+using System.Threading;
 
 public class GameTeamWork
 {
@@ -26,9 +27,20 @@ public class GameTeamWork
             Console.BufferWidth = Console.WindowWidth = 40;//size of window width.
             Console.BackgroundColor = ConsoleColor.DarkRed;//color of playfield
             //8.Draw info
-            //9.Swol down program
+            //9.Slow down program
+            Thread.Sleep(500);
 
         }
+
+      
+    }
+    //Method which print object 
+    static  void PrintOnPosition(int x, int y, char symbol, ConsoleColor color = ConsoleColor.Black)
+    {
+        //Console.SetCursorPosition move our cursor in place of what we write.
+        Console.SetCursorPosition(x, y);
+        Console.ForegroundColor = color;
+        Console.WriteLine(symbol);
     }
 }
 
