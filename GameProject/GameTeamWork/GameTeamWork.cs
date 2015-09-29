@@ -55,6 +55,17 @@ public class GameTeamWork
                     }
                 }
             }
+            int chance = randomGenerator.Next(0, 100);
+            if (chance < 30)
+            {
+                //Add bonus
+                Object newObject = new Object();
+                newObject.color = ConsoleColor.Yellow;
+                newObject.x = randomGenerator.Next(0, playfieldWidth);
+                newObject.y = 0;
+                newObject.c = '$';
+                objects.Add(newObject);
+            }
 
             //6.Check for other object are hitting
 
@@ -83,7 +94,3 @@ public class GameTeamWork
         Console.WriteLine(symbol);
     }
 }
-
-      
-  
-
