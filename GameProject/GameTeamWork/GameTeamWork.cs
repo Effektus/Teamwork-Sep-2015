@@ -30,7 +30,7 @@ public class GameTeamWork
         userObject.symbol = '@';
         userObject.color = ConsoleColor.Black;
 
-        //Random randomGenerator = new Random();
+        Random randomGenerator = new Random();
         List<Object> objects = new List<Object>();
 
         //We will insert all in while-loop
