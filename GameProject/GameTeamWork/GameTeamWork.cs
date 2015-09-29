@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 
 public class GameTeamWork
@@ -16,6 +15,7 @@ public class GameTeamWork
 
     public static void Main()
     {
+        int livesCount = 6;
 
         //2.Draw playfield
         int playfieldWidth = 9;
@@ -30,12 +30,27 @@ public class GameTeamWork
         userObject.symbol = '@';
         userObject.color = ConsoleColor.Black;
 
-        Random randomGenerator = new Random();
+      
         List<Object> objects = new List<Object>();
-
-        //We will insert all in while-loop
+        Random randomGenerator = new Random();
         while (true)
         {
+            bool hit = false;
+            int chance = randomGenerator.Next(0, 100);
+
+            if (chance < 80)
+            {
+                Object newObject = new Object();
+                newObject.color = ConsoleColor.Black;
+                newObject.x = randomGenerator.Next(0, playfieldWidth);
+                newObject.y = 0;
+                newObject.symbol = '$';
+                objects.Add(newObject);
+
+            }
+
+
+
             //4.Move our object
             while (Console.KeyAvailable)
             {
@@ -55,23 +70,40 @@ public class GameTeamWork
                     }
                 }
             }
-            int chance = randomGenerator.Next(0, 100);
-            if (chance < 30)
+
+            List<object> newList = new List<object>();
+            for (int i = 0; i < objects.Count; i++)
             {
-                //Add bonus
-                Object newObject = new Object();
-                newObject.color = ConsoleColor.Yellow;
-                newObject.x = randomGenerator.Next(0, playfieldWidth);
-                newObject.y = 0;
-                newObject.c = '$';
-                objects.Add(newObject);
+                Object oldObject = objects[i];
+                Object changeObject = new Object();
+                changeObject.x = oldObject.x;
+                changeObject.y = oldObject.y + 1;
+                changeObject.symbol = oldObject.symbol;
+                objects.Remove(oldObject);
+                objects.Add(changeObject);
+                if (changeObject.symbol == '#' && changeObject.y == userObject.y && changeObject.x == userObject.x)
+                    //Check if other cars are hitting us 3
+                {
+                    livesCount--;
+                    //hit = true;
+                }
+
+                if (changeObject.y < Console.WindowHeight)
+                {
+                    newList.Add(changeObject);
+                }
             }
 
+           
             //6.Check for other object are hitting
 
             //7.Clear the console with 
             Console.Clear();
-
+            //Print other object
+            foreach (Object element in objects)
+            {
+                PrintOnPosition(element.x, element.y, element.symbol, element.color);
+            }
             //8.print our object
             PrintOnPosition(userObject.x, userObject.y, userObject.symbol, userObject.color);
 
