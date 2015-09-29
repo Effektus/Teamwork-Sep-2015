@@ -31,7 +31,7 @@ public class GameTeamWork
         userObject.color = ConsoleColor.Black;
 
         //Random randomGenerator = new Random();
-        //List<Object> objects = new List<Object>();
+        List<Object> objects = new List<Object>();
 
         //We will insert all in while-loop
         while (true)
