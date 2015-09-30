@@ -54,7 +54,7 @@ public class GameTeamWork
             for (int i = 0; i < objects.Count; i++)
             {
                 //is hit?
-                if (objects[0].symbol == '&' && objects[0].y == userObject.y && objects[0].x == userObject.x)
+                if (objects[0].symbol == '§' && objects[0].y == userObject.y && objects[0].x == userObject.x)
                 {
                     livesCount--;
                     hit = true;
