@@ -96,8 +96,9 @@ public class GameTeamWork
 //printing userObject lives
 
             PrintOnPosition(15, 25,"Lives:"+livesCount.ToString(),ConsoleColor.DarkRed);
-
-//remove objects which are outside the field
+            //Print board for the field
+            PrintTheSideBoard();
+            //remove objects which are outside the field
             if (objects.Count>0)
             {
                 if (objects[0].y == Console.WindowHeight - 1)
@@ -110,7 +111,16 @@ public class GameTeamWork
             Thread.Sleep(300);
         }
     }
-//Method which print object 
+
+    private static void PrintTheSideBoard()
+    {
+        for (int i = 0; i < Console.WindowHeight; i++)
+        {
+            PrintOnPosition(9, i, "|", ConsoleColor.White);
+        }
+    }
+
+    //Method which print object 
     static void PrintOnPosition(int x, int y, string symbol, ConsoleColor color = ConsoleColor.Green)
     {
         //Console.SetCursorPosition move our cursor in place of what we write.
