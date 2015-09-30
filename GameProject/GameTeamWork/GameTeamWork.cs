@@ -104,7 +104,7 @@ public class GameTeamWork
             }
             if (pressedKey.Key == ConsoleKey.LeftArrow)
             {
-                if (userObject.x - 1 > 0)
+                if (userObject.x - 1 >= 0)
                 {
                     userObject.x--;
                 }
